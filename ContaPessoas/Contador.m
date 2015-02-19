@@ -13,6 +13,17 @@
 @implementation Contador {
     int boy;
     int girl;
+    
+}
+
+//SINGLETON
+static Contador *contador = nil;
+
++(Contador *) criarContador{
+    if(contador == nil){
+        contador = [[Contador alloc] init];
+    }
+    return contador;
 }
 
 -(id)init {
