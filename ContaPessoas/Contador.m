@@ -50,7 +50,9 @@ static Contador *contador = nil;
     return girl;
 }
 
-
+-(int)getTotal{
+    return boy+girl;
+}
 
 @end
 
