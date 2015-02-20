@@ -16,6 +16,9 @@
     
 }
 
+@synthesize delegate;
+
+
 //SINGLETON
 static Contador *contador = nil;
 
@@ -25,6 +28,15 @@ static Contador *contador = nil;
     }
     return contador;
 }
+//static dispatch_once_t oneToken;
+//dispatch_once (&onceToken,
+//  {
+//      sharedContador = [[self alloc] init];
+//  });
+//  return sharedContador;
+//}
+
+
 
 -(id)init {
     self = [super init];
@@ -36,11 +48,14 @@ static Contador *contador = nil;
 }
 
 - (void)maisUmCueca {
-    boy = boy + 1;
+    boy++;
+    [delegate atualizar];
 }
 - (void)maisUmaGata {
     girl++;
+    [delegate atualizar];
 }
+
 
 -(int)getBoys {
     return boy;

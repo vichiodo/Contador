@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MostradorDelegate.h"
 
-@interface SecondViewController : UIViewController
+
+@interface SecondViewController : UIViewController <MostradorDelegate>
+
 
 @property (weak, nonatomic) IBOutlet UILabel *totalBoys;
 @property (weak, nonatomic) IBOutlet UILabel *totalGirls;

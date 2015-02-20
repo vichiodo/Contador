@@ -20,9 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     contador = [Contador criarContador];
+    contador.delegate = self;
+    [self atualizar];
 }
 
-
+-(void)atualizar{
+    _totalBoys.text = [NSString stringWithFormat: @"%d", [contador getBoys]];
+    _totalGirls.text = [NSString stringWithFormat: @"%d", [contador getGirls]];
+    _total.text = [NSString stringWithFormat:@"%d", [contador getTotal]];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
